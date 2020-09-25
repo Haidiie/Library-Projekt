@@ -22,13 +22,14 @@ public class Library implements Serializable {
     
     private String name;
     private String author;
-    private int year;
+    private int published;
     private String genre;
 
-    public Library(String name, String author, int year, String genre) {
+    public Library(String name, String author, int published, String genre) {
+
         this.name = name;
         this.author = author;
-        this.year = year;
+        this.published = published;
         this.genre = genre;
     }
 
@@ -60,13 +61,15 @@ public class Library implements Serializable {
         this.author = author;
     }
 
-    public int getYear() {
-        return year;
+    public int getPublished() {
+        return published;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setPublished(int published) {
+        this.published = published;
     }
+
+    
 
     public String getGenre() {
         return genre;

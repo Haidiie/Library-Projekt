@@ -29,7 +29,7 @@ public class LibraryManagment implements LibraryManagmentInterface {
 
     @Override
     public List<Library> getAllBooks() {
-        Query q = em.createQuery("SELECT b FROM Burger b");
+        Query q = em.createQuery("SELECT b FROM Library b");
         return q.getResultList();
     }
 
@@ -40,7 +40,7 @@ public class LibraryManagment implements LibraryManagmentInterface {
 
     @Override
     public void removeBook(Library l) {
-        if(!em.contains(l)){
+        if (!em.contains(l)) {
             l = em.merge(l);
         }
         em.remove(l);

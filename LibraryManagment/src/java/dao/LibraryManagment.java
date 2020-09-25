@@ -26,7 +26,32 @@ public class LibraryManagment implements LibraryManagmentInterface {
     public Library findById(int id) {
         return em.find(Library.class, id);
     }
-
+    
+    @Override
+    public List <Library> findByName(String name) {
+        Query q = em.createQuery(
+        "SELECT b FROM Library b WHERE b.name LIKE :bookName")
+        .setParameter("bookName", name);
+        return q.getResultList();
+    }
+    
+    @Override
+    public List <Library> findByAuthor(String author) {
+        Query q = em.createQuery(
+        "SELECT b FROM Library b WHERE b.author LIKE :bookAuthor")
+        .setParameter("bookAuthor", author);
+        return q.getResultList();
+    }
+    
+    @Override
+    public List <Library> findByGenre(String genre) {
+        Query q = em.createQuery(
+        "SELECT b FROM Library b WHERE b.genre LIKE :bookGenre")
+        .setParameter("bookGenre", genre);
+        return q.getResultList();
+    }
+    
+    
     @Override
     public List<Library> getAllBooks() {
         Query q = em.createQuery("SELECT b FROM Library b");

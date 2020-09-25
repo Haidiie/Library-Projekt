@@ -27,6 +27,41 @@
                 <h:commandButton value="Submit" action="#{libraryController.submit}"/>
 
             </h:panelGrid>
+                
+                
+            <h:panelGrid columns="2">
+                
+                <h:outputLabel value="Search book Id"/>
+                <h:inputText value="#{libraryController.src}"/>
+                <h:commandButton value="Search ID" action="#{libraryController.searchBook}"/>
+                
+            </h:panelGrid>
+            
+            <h:panelGrid columns="2">
+                
+                <h:outputLabel value="Search book Name"/>
+                <h:inputText value="#{libraryController.srcname}"/>
+                <h:commandButton value="Search Name" action="#{libraryController.searchBookName}"/>
+                
+            </h:panelGrid>
+            
+             <h:panelGrid columns="2">
+                
+                <h:outputLabel value="Search book Author"/>
+                <h:inputText value="#{libraryController.srcauthor}"/>
+                <h:commandButton value="Search Author" action="#{libraryController.searchBookAuthor}"/>
+                
+            </h:panelGrid>
+            
+            <h:panelGrid columns="2">
+                
+                <h:outputLabel value="Search book Genre"/>
+                <h:inputText value="#{libraryController.srcgenre}"/>
+                <h:commandButton value="Search Genre" action="#{libraryController.searchBookGenre}"/>
+                
+            </h:panelGrid>
+            
+            
             
             <p:dataTable var="b" value="#{libraryController.allBooks}" style="margin-bottom:40px">
         

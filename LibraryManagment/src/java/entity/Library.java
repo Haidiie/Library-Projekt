@@ -33,6 +33,7 @@ public class Library implements Serializable {
         this.genre = genre;
     }
 
+
     public Library() {
     }
     
@@ -83,7 +84,7 @@ public class Library implements Serializable {
     
     @Override
     public String toString() {
-        return "entity.Library[ id=" + id + " ]";
+        return "entity.Library[ id=" + id + " ] ]";
     }
     
 }

@@ -19,11 +19,44 @@ public class LibraryController {
     @Inject
     LibraryManagmentInterface lm;
     
+    
+    private int src;
+    private String srcname;
+    private String srcauthor;
+    private String srcgenre;
     private String name;
     private String author;
     private int published;
     private String genre;
     private List<Library> allBooks;
+    
+    public void searchBook(){
+        Library library = lm.findById(src);
+        allBooks.clear();
+        allBooks.add(library);
+    }
+    
+   
+    public void searchBookName(){
+        List<Library> library = lm.findByName(srcname);
+        allBooks.clear();
+        allBooks = library;
+    }
+    
+    public void searchBookAuthor(){
+        List<Library> library = lm.findByAuthor(srcauthor);
+        allBooks.clear();
+        allBooks = library;
+    }
+    
+    public void searchBookGenre(){
+        List<Library> library = lm.findByGenre(srcgenre);
+        allBooks.clear();
+        allBooks = library;
+    }
+    
+    
+    
     
     public void submit() {
         Library library = new Library (name, author, published, genre);
@@ -46,6 +79,9 @@ public class LibraryController {
         lm.updateBook(l);
         fillBooks();
     }
+    
+    
+    
     
     public LibraryController() {
     }
@@ -90,7 +126,39 @@ public class LibraryController {
         this.allBooks = allBooks;
     }
 
+    public int getSrc() {
+        return src;
+    }
+
+    public void setSrc(int src) {
+        this.src = src;
+    }
+
+    public String getSrcname() {
+        return srcname;
+    }
+
+    public void setSrcname(String srcname) {
+        this.srcname = srcname;
+    }
+
+    public String getSrcauthor() {
+        return srcauthor;
+    }
+
+    public void setSrcauthor(String srcauthor) {
+        this.srcauthor = srcauthor;
+    }
+
+    public String getSrcgenre() {
+        return srcgenre;
+    }
+
+    public void setSrcgenre(String srcgenre) {
+        this.srcgenre = srcgenre;
+    }
+
     
-    
+
     
 }

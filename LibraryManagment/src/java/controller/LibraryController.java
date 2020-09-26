@@ -22,11 +22,12 @@ public class LibraryController {
     
     private int src;
     private String srcname;
+    private String srcpublished;
     private String srcauthor;
     private String srcgenre;
     private String name;
     private String author;
-    private int published;
+    private String published;
     private String genre;
     private List<Library> allBooks;
     
@@ -39,6 +40,12 @@ public class LibraryController {
    
     public void searchBookName(){
         List<Library> library = lm.findByName(srcname);
+        allBooks.clear();
+        allBooks = library;
+    }
+    
+    public void searchBookPublished(){
+        List<Library> library = lm.findByPublished(srcpublished);
         allBooks.clear();
         allBooks = library;
     }
@@ -102,11 +109,11 @@ public class LibraryController {
         this.author = author;
     }
 
-    public int getPublished() {
+    public String getPublished() {
         return published;
     }
 
-    public void setPublished(int published) {
+    public void setPublished(String published) {
         this.published = published;
     }
 
@@ -156,6 +163,14 @@ public class LibraryController {
 
     public void setSrcgenre(String srcgenre) {
         this.srcgenre = srcgenre;
+    }
+
+    public String getSrcpublished() {
+        return srcpublished;
+    }
+
+    public void setSrcpublished(String srcpublished) {
+        this.srcpublished = srcpublished;
     }
 
     

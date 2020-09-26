@@ -36,6 +36,14 @@ public class LibraryManagment implements LibraryManagmentInterface {
     }
     
     @Override
+    public List <Library> findByPublished(String published) {
+        Query q = em.createQuery(
+        "SELECT b FROM Library b WHERE b.published LIKE :bookYear")
+        .setParameter("bookYear", published);
+        return q.getResultList();
+    }
+    
+    @Override
     public List <Library> findByAuthor(String author) {
         Query q = em.createQuery(
         "SELECT b FROM Library b WHERE b.author LIKE :bookAuthor")

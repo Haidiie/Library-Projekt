@@ -5,28 +5,33 @@
       xmlns:p="http://primefaces.org/ui">
 
     <h:head>
-        <title>Library Managment</title>
+        <title>Add Book</title>
+        <h:outputStylesheet library="css" name="style.css"/>
     </h:head>
     <h:body>
         <h:form>
-            <h:panelGrid columns="2">
- 
-                <h:outputLabel value="Book Name"/>
-                <p:inputText value="#{libraryController.name}" placeholder="Enter a book name"/>
-
-                <h:outputLabel value="Book Author"/>
-                <p:inputText value="#{libraryController.author}" placeholder="Enter the authors name"/>
-
-                <h:outputLabel value="Published"/>
-                <p:inputText value="#{libraryController.published}" placeholder="Enter released year"/>
-
-                <h:outputLabel value="Genre"/>
-                <p:inputText value="#{libraryController.genre}" placeholder="Enter the genre"/>
-
-
-                <h:commandButton value="Submit" action="#{libraryController.submit}"/>
-
-            </h:panelGrid>
+            <!--  <h:panelGrid columns="2"> -->
+            <div class="add-book">
+                <h1> add book </h1>
+                <div class="textbox">   
+                    <p:inputText class="input" value="#{libraryController.name}" placeholder="Book name"/>
+                </div>
+                
+                <div class="textbox"> 
+                    <p:inputText class="input" value="#{libraryController.author}" placeholder="Author name"/>
+                </div>    
+                
+                <div class="textbox"> 
+                    <p:inputText class="input" value="#{libraryController.published}" placeholder="Released year"/>
+                </div>
+                
+                <div class="textbox"> 
+                    <p:inputText class="input" value="#{libraryController.genre}" placeholder="Genre"/>
+                </div> 
+                
+                <h:commandButton styleClass="btn" value="Submit" action="#{libraryController.submit}"/>
+            </div>
+           <!-- </h:panelGrid> -->
                 
                 
             <h:panelGrid columns="2">
@@ -42,6 +47,14 @@
                 <h:outputLabel value="Search book Name"/>
                 <h:inputText value="#{libraryController.srcname}"/>
                 <h:commandButton value="Search Name" action="#{libraryController.searchBookName}"/>
+                
+            </h:panelGrid>
+           
+           <h:panelGrid columns="2">
+                
+                <h:outputLabel value="Search book Year"/>
+                <h:inputText value="#{libraryController.srcpublished}"/>
+                <h:commandButton value="Search Year" action="#{libraryController.searchBookPublished}"/>
                 
             </h:panelGrid>
             
@@ -60,43 +73,33 @@
                 <h:commandButton value="Search Genre" action="#{libraryController.searchBookGenre}"/>
                 
             </h:panelGrid>
+        </h:form>   
             
-            
-            
-            <p:dataTable var="b" value="#{libraryController.allBooks}" style="margin-bottom:40px">
+        <h:form>
+    
+            <p:dataTable class="tabell" var="b" value="#{libraryController.allBooks}" style="margin-bottom:40px">
         
-        <p:ajax event="sort"/>
-        <p:column headerText="Id" sortBy="#{b.id}">
-            <h:outputText value="#{b.id}" />
-        </p:column>
- 
         <p:column headerText="Name" sortBy="#{b.name}">
-            <p:inputText value="#{b.name}" />
+            <h:outputText value="#{b.name}" />
         </p:column>
  
         <p:column headerText="Author" sortBy="#{b.author}">
-            <p:inputText value="#{b.author}" />
+            <h:outputText value="#{b.author}" />
         </p:column>
  
         <p:column headerText="Year" sortBy="#{b.published}">
-            <p:inputText value="#{b.published}" />
+            <h:outputText value="#{b.published}" />
         </p:column>
-        
+ 
         <p:column headerText="Genre" sortBy="#{b.genre}">
-            <p:inputText value="#{b.genre}" />
+            <h:outputText value="#{b.genre}" />
         </p:column>
-        
-        <p:column headerText="Action">
-                    <h:commandButton value="Delete" action="#{libraryController.removeBook(b)}"/>
-                    <h:commandButton value="Edit" action="#{libraryController.editBook(b)}"/>
-        </p:column>
-        
-        
     </p:dataTable>
 
         </h:form>
-        <br />
-        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+        <br /><br />
+        <h:button value="To admin page" outcome="admin" />
+        
     </h:body>
 </html>
 

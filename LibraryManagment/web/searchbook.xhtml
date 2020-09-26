@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Search Book</title>
+        <h:outputStylesheet library="css" name="style.css"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <div>
+                <div>
+                
+                    <h:outputLabel value="Search book Id"/>
+                    <h:inputText value="#{libraryController.src}"/>
+                    <h:commandButton value="Search ID" action="#{libraryController.searchBook}"/>
+                
+                </div>
+            
+                <div>
+                
+                    <h:outputLabel value="Search book Name"/>
+                    <h:inputText value="#{libraryController.srcname}"/>
+                    <h:commandButton value="Search Name" action="#{libraryController.searchBookName}"/>
+                
+                </div>
+            
+                <div>
+                
+                    <h:outputLabel value="Search book Author"/>
+                    <h:inputText value="#{libraryController.srcauthor}"/>
+                    <h:commandButton value="Search Author" action="#{libraryController.searchBookAuthor}"/>
+                
+                </div>
+            
+                <div>
+                
+                    <h:outputLabel value="Search book Genre"/>
+                    <h:inputText value="#{libraryController.srcgenre}"/>
+                    <h:commandButton value="Search Genre" action="#{libraryController.searchBookGenre}"/>
+                
+                </div>
+            </div>
+        </h:form>   
+            
+        <h:form>
+    
+            <p:dataTable class="tabell" var="b" value="#{libraryController.allBooks}" style="margin-bottom:40px">
+        
+        <p:column headerText="Name" sortBy="#{b.name}">
+            <h:outputText value="#{b.name}" />
+        </p:column>
+ 
+        <p:column headerText="Author" sortBy="#{b.author}">
+            <h:outputText value="#{b.author}" />
+        </p:column>
+ 
+        <p:column headerText="Year" sortBy="#{b.published}">
+            <h:outputText value="#{b.published}" />
+        </p:column>
+ 
+        <p:column headerText="Genre" sortBy="#{b.genre}">
+            <h:outputText value="#{b.genre}" />
+        </p:column>
+    </p:dataTable>
+
+        </h:form>
+        <br /><br />
+        <h:button value="To admin page" outcome="admin" />
+        
+    </h:body>
+</html>
+

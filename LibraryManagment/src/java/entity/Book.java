@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @XmlRootElement
-public class Library implements Serializable {
+public class Book implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -25,7 +25,7 @@ public class Library implements Serializable {
     private String published;
     private String genre;
 
-    public Library(String name, String author, String published, String genre) {
+    public Book(String name, String author, String published, String genre) {
 
         this.name = name;
         this.author = author;
@@ -34,7 +34,7 @@ public class Library implements Serializable {
     }
 
 
-    public Library() {
+    public Book() {
     }
     
 
@@ -84,7 +84,7 @@ public class Library implements Serializable {
     
     @Override
     public String toString() {
-        return "entity.Library[ id=" + id + " ] ]";
+        return "entity.Book[ id=" + id + " ] ]";
     }
     
 }

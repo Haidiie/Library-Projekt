@@ -6,99 +6,16 @@
 
     <h:head>
         <title>Add Book</title>
-        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputStylesheet library="css" name="styleMain.css"/>
     </h:head>
     <h:body>
-        <h:form>
-            <!--  <h:panelGrid columns="2"> -->
-            <div class="add-book">
-                <h1> add book </h1>
-                <div class="textbox">   
-                    <p:inputText class="input" value="#{libraryController.name}" placeholder="Book name"/>
-                </div>
-                
-                <div class="textbox"> 
-                    <p:inputText class="input" value="#{libraryController.author}" placeholder="Author name"/>
-                </div>    
-                
-                <div class="textbox"> 
-                    <p:inputText class="input" value="#{libraryController.published}" placeholder="Released year"/>
-                </div>
-                
-                <div class="textbox"> 
-                    <p:inputText class="input" value="#{libraryController.genre}" placeholder="Genre"/>
-                </div> 
-                
-                <h:commandButton styleClass="btn" value="Submit" action="#{libraryController.submit}"/>
-            </div>
-           <!-- </h:panelGrid> -->
-                
-                
-            <h:panelGrid columns="2">
-                
-                <h:outputLabel value="Search book Id"/>
-                <h:inputText value="#{libraryController.src}"/>
-                <h:commandButton value="Search ID" action="#{libraryController.searchBook}"/>
-                
-            </h:panelGrid>
-            
-            <h:panelGrid columns="2">
-                
-                <h:outputLabel value="Search book Name"/>
-                <h:inputText value="#{libraryController.srcname}"/>
-                <h:commandButton value="Search Name" action="#{libraryController.searchBookName}"/>
-                
-            </h:panelGrid>
-           
-           <h:panelGrid columns="2">
-                
-                <h:outputLabel value="Search book Year"/>
-                <h:inputText value="#{libraryController.srcpublished}"/>
-                <h:commandButton value="Search Year" action="#{libraryController.searchBookPublished}"/>
-                
-            </h:panelGrid>
-            
-             <h:panelGrid columns="2">
-                
-                <h:outputLabel value="Search book Author"/>
-                <h:inputText value="#{libraryController.srcauthor}"/>
-                <h:commandButton value="Search Author" action="#{libraryController.searchBookAuthor}"/>
-                
-            </h:panelGrid>
-            
-            <h:panelGrid columns="2">
-                
-                <h:outputLabel value="Search book Genre"/>
-                <h:inputText value="#{libraryController.srcgenre}"/>
-                <h:commandButton value="Search Genre" action="#{libraryController.searchBookGenre}"/>
-                
-            </h:panelGrid>
-        </h:form>   
-            
-        <h:form>
-    
-            <p:dataTable class="tabell" var="b" value="#{libraryController.allBooks}" style="margin-bottom:40px">
-        
-        <p:column headerText="Name" sortBy="#{b.name}">
-            <h:outputText value="#{b.name}" />
-        </p:column>
- 
-        <p:column headerText="Author" sortBy="#{b.author}">
-            <h:outputText value="#{b.author}" />
-        </p:column>
- 
-        <p:column headerText="Year" sortBy="#{b.published}">
-            <h:outputText value="#{b.published}" />
-        </p:column>
- 
-        <p:column headerText="Genre" sortBy="#{b.genre}">
-            <h:outputText value="#{b.genre}" />
-        </p:column>
-    </p:dataTable>
 
-        </h:form>
-        <br /><br />
+        <br/><br/>
         <h:button value="To admin page" outcome="admin" />
+        <br/><br/>
+        <h:button value="To add book page" outcome="addbook" />
+        <br/><br/>
+        <h:button value="To Searching page" outcome="searchbook" />
         
     </h:body>
 </html>

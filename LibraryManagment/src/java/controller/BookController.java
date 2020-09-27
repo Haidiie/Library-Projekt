@@ -1,73 +1,66 @@
 package controller;
 
-import dao.LibraryManagmentInterface;
-import entity.Library;
+import entity.Book;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import dao.BookManagmentInterface;
 
 /**
  *
  * @author Heidar
  */
-@Named(value = "libraryController")
+@Named(value = "bookController")
 @RequestScoped
-public class LibraryController {
+public class BookController {
 
     @Inject
-    LibraryManagmentInterface lm;
+    BookManagmentInterface lm;
     
     
-    private int src;
-    private String srcname;
-    private String srcpublished;
-    private String srcauthor;
-    private String srcgenre;
-    private String name;
-    private String author;
-    private String published;
-    private String genre;
-    private List<Library> allBooks;
+    private Integer src;
+    private String srcname,srcpublished,srcauthor,srcgenre,name,author,published,genre;
+    private List<Book> allBooks;
     
     public void searchBook(){
-        Library library = lm.findById(src);
+        Book book = lm.findById(src);
         allBooks.clear();
-        allBooks.add(library);
+        allBooks.add(book);
     }
     
    
     public void searchBookName(){
-        List<Library> library = lm.findByName(srcname);
+        List<Book> book = lm.findByName(srcname);
         allBooks.clear();
-        allBooks = library;
+        allBooks = book;
     }
     
     public void searchBookPublished(){
-        List<Library> library = lm.findByPublished(srcpublished);
+        List<Book> book = lm.findByPublished(srcpublished);
         allBooks.clear();
-        allBooks = library;
+        allBooks = book;
     }
     
     public void searchBookAuthor(){
-        List<Library> library = lm.findByAuthor(srcauthor);
+        List<Book> book = lm.findByAuthor(srcauthor);
         allBooks.clear();
-        allBooks = library;
+        allBooks = book;
     }
     
     public void searchBookGenre(){
-        List<Library> library = lm.findByGenre(srcgenre);
+        List<Book> book = lm.findByGenre(srcgenre);
         allBooks.clear();
-        allBooks = library;
+        allBooks = book;
     }
     
     
     
     
     public void submit() {
-        Library library = new Library (name, author, published, genre);
-        lm.addBook(library);
+        Book book = new Book (name, author, published, genre);
+        lm.addBook(book);
         setAllBooks(lm.getAllBooks());
         fillBooks();
     }
@@ -76,21 +69,22 @@ public class LibraryController {
     public void fillBooks() {
         this.allBooks = lm.getAllBooks();
     }
+
     
-    public void removeBook(Library l){
-        lm.removeBook(l);
+    public void removeBook(Book b){
+        lm.removeBook(b);
         fillBooks();
     }
     
-    public void editBook(Library l){
-        lm.updateBook(l);
+    public void editBook(Book b){
+        lm.updateBook(b);
         fillBooks();
     }
     
     
     
     
-    public LibraryController() {
+    public BookController() {
     }
 
     public String getName() {
@@ -125,19 +119,19 @@ public class LibraryController {
         this.genre = genre;
     }
 
-    public List<Library> getAllBooks() {
+    public List<Book> getAllBooks() {
         return allBooks;
     }
 
-    public void setAllBooks(List<Library> allBooks) {
+    public void setAllBooks(List<Book> allBooks) {
         this.allBooks = allBooks;
     }
 
-    public int getSrc() {
+    public Integer getSrc() {
         return src;
     }
 
-    public void setSrc(int src) {
+    public void setSrc(Integer src) {
         this.src = src;
     }
 

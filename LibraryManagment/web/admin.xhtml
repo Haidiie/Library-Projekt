@@ -8,7 +8,7 @@
     </h:head>
     <h:body>
         <h:form>
-             <p:dataTable var="b" value="#{libraryController.allBooks}" style="margin-bottom:40px">
+             <p:dataTable var="b" value="#{bookController.allBooks}" style="margin-bottom:40px">
         
         <p:ajax event="sort"/>
         <p:column headerText="Id" sortBy="#{b.id}">
@@ -32,13 +32,21 @@
         </p:column>
         
         <p:column headerText="Action">
-                    <h:commandButton value="Delete" action="#{libraryController.removeBook(b)}"/>
-                    <h:commandButton value="Edit" action="#{libraryController.editBook(b)}"/>
+                    <h:commandButton value="Delete" action="#{bookController.removeBook(b)}"/>
+                    <h:commandButton value="Edit" action="#{bookController.editBook(b)}"/>
         </p:column>
         
         
     </p:dataTable>
         </h:form>
+        
+        <br/><br/>
+        <h:button value="To main page" outcome="index" />
+        <br/><br/>
+        <h:button value="To add book page" outcome="addbook" />
+        <br/><br/>
+        <h:button value="To Searching page" outcome="searchbook" />
+        
     </h:body>
 </html>
 

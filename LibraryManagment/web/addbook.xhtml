@@ -11,7 +11,7 @@
         <h:form>
             <!--  <h:panelGrid columns="2"> -->
             <div class="add-book">
-                <h1> add book </h1>
+                <h1> Add Book </h1>
                 <div class="textbox">   
                     <p:inputText class="input" value="#{bookController.name}" placeholder="Book name"/>
                 </div>
@@ -35,12 +35,9 @@
         </h:form>   
             
 
-        <br/><br/>
-        <h:button value="To admin page" outcome="admin" />
-        <br/><br/>
-        <h:button value="To main page" outcome="index" />
-        <br/><br/>
-        <h:button value="To Searching page" outcome="searchbook" />
+       <div class="page-btn">
+        <h:button class="page-btns" value="Main menu" outcome="index" />
+        </div>
         
     </h:body>
 </html>

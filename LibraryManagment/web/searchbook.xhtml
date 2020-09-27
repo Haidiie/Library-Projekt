@@ -8,6 +8,11 @@
         <h:outputStylesheet library="css" name="styleSearch.css"/>
     </h:head>
     <h:body>
+        
+         <div class="page-btn">
+        <h:button class="page-btns" value="Main menu" outcome="index" />
+        </div>
+        
         <h:form>
             <div class="search-book">
                 
@@ -15,27 +20,34 @@
                 
                 <div class="textbox">
 
-                    <p:inputText class="input inputId" value="#{bookController.src}" placeholder="Search book Id"/>
+                    <p:inputText class="input inputId" value="#{bookController.src}" placeholder="Search Id"/>
                     <h:commandButton styleClass="btn btnId" value="Search ID" action="#{bookController.searchBook}"/>
 
                 </div>
 
                 <div class="textbox">
-                    <p:inputText class="input inputName" value="#{bookController.srcname}" placeholder="Search book Name"/>
+                    <p:inputText class="input inputName" value="#{bookController.srcname}" placeholder="Search Name"/>
                     <h:commandButton styleClass="btn btnName" value="Search Name" action="#{bookController.searchBookName}"/>
 
                 </div>
 
                 <div class="textbox">
 
-                    <p:inputText class="input" value="#{bookController.srcauthor}" placeholder="Search book Author"/>
+                    <p:inputText class="input" value="#{bookController.srcauthor}" placeholder="Search Author"/>
                     <h:commandButton styleClass="btn" value="Search Author" action="#{bookController.searchBookAuthor}"/>
+
+                </div>
+                
+                <div class="textbox">
+
+                    <p:inputText class="input" value="#{bookController.srcpublished}" placeholder="Search Year"/>
+                    <h:commandButton styleClass="btn" value="Search Year" action="#{bookController.searchBookPublished}"/>
 
                 </div>
 
                 <div class="textbox">
 
-                    <p:inputText class="input" value="#{bookController.srcgenre}" placeholder="Search book Genre"/>
+                    <p:inputText class="input" value="#{bookController.srcgenre}" placeholder="Search Genre"/>
                     <h:commandButton styleClass="btn" value="Search Genre" action="#{bookController.searchBookGenre}"/>
 
                 </div>
@@ -69,14 +81,7 @@
 
         </h:form>
         
-        <div class="page-btn">
-  
-        <h:button class="page-btns" value="To admin page" outcome="admin" />
-
-        <h:button class="page-btns" value="To add book page" outcome="addbook" />
-
-        <h:button class="page-btns" value="To main page" outcome="index" />
-        </div>
+ 
     </h:body>
 </html>
 

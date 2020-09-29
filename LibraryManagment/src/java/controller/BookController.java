@@ -19,10 +19,14 @@ public class BookController {
     @Inject
     BookManagmentInterface lm;
     
-    
-    private Integer src;
-    private String srcname,srcpublished,srcauthor,srcgenre,name,author,published,genre;
+    private Integer src,books;
+    private String srcname,srcpublished,srcauthor,srcgenre,name,author,published,genre,text;
     private List<Book> allBooks;
+   
+    public void countBooks(){
+        books = allBooks.size();
+        text = " Books";
+    }
     
     public void searchBook(){
         Book book = lm.findById(src);
@@ -30,7 +34,6 @@ public class BookController {
         allBooks.add(book);
     }
     
-   
     public void searchBookName(){
         List<Book> book = lm.findByName(srcname);
         allBooks.clear();
@@ -55,9 +58,6 @@ public class BookController {
         allBooks = book;
     }
     
-    
-    
-    
     public void submit() {
         Book book = new Book (name, author, published, genre);
         lm.addBook(book);
@@ -70,7 +70,6 @@ public class BookController {
         this.allBooks = lm.getAllBooks();
     }
 
-    
     public void removeBook(Book b){
         lm.removeBook(b);
         fillBooks();
@@ -80,9 +79,6 @@ public class BookController {
         lm.updateBook(b);
         fillBooks();
     }
-    
-    
-    
     
     public BookController() {
     }
@@ -167,7 +163,21 @@ public class BookController {
         this.srcpublished = srcpublished;
     }
 
-    
+    public Integer getBooks() {
+        return books;
+    }
 
-    
+    public void setBooks(Integer books) {
+        this.books = books;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+
 }

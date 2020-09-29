@@ -7,8 +7,7 @@ import java.util.List;
  *
  * @author Heidar
  */
-public interface BookManagmentInterface {
-    
+public interface BookManagmentInterface {   
     public void addBook(Book b);
     public Book findById(Integer id);
     public List <Book> findByName(String name);
@@ -18,5 +17,4 @@ public interface BookManagmentInterface {
     public List <Book> getAllBooks();
     public void updateBook(Book b);
     public void removeBook(Book b);
-    
 }

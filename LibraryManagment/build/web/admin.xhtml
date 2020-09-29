@@ -9,42 +9,31 @@
     </h:head>
     <h:body>
         <div class="page-btn">
-        <h:button class="page-btns" value="Main menu" outcome="index" />
+            <h:button class="page-btns" value="Main menu" outcome="index" />
         </div>
         <h:form>
             <p:dataTable class="tabellen" var="b" value="#{bookController.allBooks}">
-        
-        <p:ajax event="sort"/>
-        <p:column class="tabell" headerText="Id" sortBy="#{b.id}">
-            <h:outputText class="tabell" value="#{b.id}" />
-        </p:column>
- 
-        <p:column headerText="Name" sortBy="#{b.name}">
-            <p:inputText value="#{b.name}" />
-        </p:column>
- 
-        <p:column headerText="Author" sortBy="#{b.author}">
-            <p:inputText value="#{b.author}" />
-        </p:column>
- 
-        <p:column headerText="Year" sortBy="#{b.published}">
-            <p:inputText value="#{b.published}" />
-        </p:column>
-        
-        <p:column headerText="Genre" sortBy="#{b.genre}">
-            <p:inputText value="#{b.genre}" />
-        </p:column>
-        
-        <p:column headerText="Action">
-            <h:commandButton styleClass="btn" value="Edit" action="#{bookController.editBook(b)}"/>
-            <h:commandButton styleClass="btn" value="Delete" action="#{bookController.removeBook(b)}"/>
-        </p:column>
-        
-        
-    </p:dataTable>
+                <p:column class="tabell" headerText="Id" sortBy="#{b.id}">
+                    <h:outputText class="tabell" value="#{b.id}" />
+                </p:column>
+                <p:column headerText="Name" sortBy="#{b.name}">
+                    <p:inputText value="#{b.name}" />
+                </p:column>
+                <p:column headerText="Author" sortBy="#{b.author}">
+                    <p:inputText value="#{b.author}" />
+                </p:column>
+                <p:column headerText="Year" sortBy="#{b.published}">
+                    <p:inputText value="#{b.published}" />
+                </p:column>
+                <p:column headerText="Genre" sortBy="#{b.genre}">
+                    <p:inputText value="#{b.genre}" />
+                </p:column>
+                <p:column headerText="Action">
+                    <h:commandButton styleClass="btn" value="Edit" action="#{bookController.editBook(b)}"/>
+                    <h:commandButton styleClass="btn" value="Delete" action="#{bookController.removeBook(b)}"/>
+                </p:column>
+            </p:dataTable>
         </h:form>
-
-        
     </h:body>
 </html>
 

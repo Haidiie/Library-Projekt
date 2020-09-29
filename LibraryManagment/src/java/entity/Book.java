@@ -33,11 +33,9 @@ public class Book implements Serializable {
         this.genre = genre;
     }
 
-
     public Book() {
     }
     
-
     public Integer getId() {
         return id;
     }
@@ -70,8 +68,6 @@ public class Book implements Serializable {
         this.published = published;
     }
 
-    
-
     public String getGenre() {
         return genre;
     }
@@ -79,9 +75,7 @@ public class Book implements Serializable {
     public void setGenre(String genre) {
         this.genre = genre;
     }
-    
-    
-    
+  
     @Override
     public String toString() {
         return "entity.Book[ id=" + id + " ] ]";

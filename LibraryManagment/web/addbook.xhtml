@@ -9,36 +9,25 @@
     </h:head>
     <h:body>
         <h:form>
-            <!--  <h:panelGrid columns="2"> -->
             <div class="add-book">
                 <h1> Add Book </h1>
                 <div class="textbox">   
                     <p:inputText class="input" value="#{bookController.name}" placeholder="Book name"/>
                 </div>
-                
                 <div class="textbox"> 
                     <p:inputText class="input" value="#{bookController.author}" placeholder="Author name"/>
                 </div>    
-                
                 <div class="textbox"> 
                     <p:inputText class="input" value="#{bookController.published}" placeholder="Released year"/>
                 </div>
-                
                 <div class="textbox"> 
                     <p:inputText class="input" value="#{bookController.genre}" placeholder="Genre"/>
                 </div> 
-                
                 <h:commandButton styleClass="btn" value="Submit" action="#{bookController.submit}"/>
-            </div>
-
-            
-        </h:form>   
-            
-
-       <div class="page-btn">
-        <h:button class="page-btns" value="Main menu" outcome="index" />
+            </div>            
+        </h:form>             
+        <div class="page-btn">
+            <h:button class="page-btns" value="Main menu" outcome="index" />
         </div>
-        
     </h:body>
 </html>
-

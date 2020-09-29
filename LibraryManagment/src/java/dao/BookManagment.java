@@ -27,6 +27,7 @@ public class BookManagment implements BookManagmentInterface {
         return em.find(Book.class, id);
     }
     
+
     @Override
     public List <Book> findByName(String name) {
         Query q = em.createQuery(

@@ -9,13 +9,11 @@ and open the template in the editor.
 */
 
 body{
-    
     background-image: url("img/start.jpg");
     background-size: cover;
     font-family: sans-serif;
     font-size: 14px;
 }
-
 
 .page-btn{
     text-align: center;

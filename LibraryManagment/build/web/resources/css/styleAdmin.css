@@ -9,13 +9,11 @@ and open the template in the editor.
 */
 
 body{
-    
     background-image: url("img/admin.jpg");
     background-size: cover;
     font-family: sans-serif;
     font-size: 14px;
 }
-
 
 .page-btn{
     text-align: center;
@@ -32,7 +30,6 @@ body{
     background: rgba(0,0,0,0.8);
     font-family: "montserrat";
 }
-
 
 .ui-widget-content{
     background: none;
@@ -57,5 +54,4 @@ body{
     cursor: pointer;
     background: rgba(0,0,0,0.8);
     font-family: "montserrat";
-    
 }

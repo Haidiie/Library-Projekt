@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Admin</title>
+        <h:outputStylesheet library="css" name="styleAdmin.css"/>
+    </h:head>
+    <h:body>
+        <div class="page-btn">
+            <h:button class="page-btns" value="Main menu" outcome="index" />
+        </div>
+        <h:form>
+            <p:dataTable class="tabellen" var="b" value="#{bookController.allBooks}">
+                <p:column class="tabell" headerText="Id" sortBy="#{b.id}">
+                    <h:outputText class="tabell" value="#{b.id}" />
+                </p:column>
+                <p:column headerText="Name" sortBy="#{b.name}">
+                    <p:inputText value="#{b.name}" />
+                </p:column>
+                <p:column headerText="Author" sortBy="#{b.author}">
+                    <p:inputText value="#{b.author}" />
+                </p:column>
+                <p:column headerText="Year" sortBy="#{b.published}">
+                    <p:inputText value="#{b.published}" />
+                </p:column>
+                <p:column headerText="Genre" sortBy="#{b.genre}">
+                    <p:inputText value="#{b.genre}" />
+                </p:column>
+                <p:column headerText="Action">
+                    <h:commandButton styleClass="btn" value="Edit" action="#{bookController.editBook(b)}"/>
+                    <h:commandButton styleClass="btn" value="Delete" action="#{bookController.removeBook(b)}"/>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+    </h:body>
+</html>
+
